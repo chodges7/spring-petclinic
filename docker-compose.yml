@@ -1,12 +1,24 @@
-mysql:
-  image: mysql:5.7
-  ports:
-    - "3306:3306"
-  environment:
-    - MYSQL_ROOT_PASSWORD=
-    - MYSQL_ALLOW_EMPTY_PASSWORD=true
-    - MYSQL_USER=petclinic
-    - MYSQL_PASSWORD=petclinic
-    - MYSQL_DATABASE=petclinic
-  volumes:
-    - "./conf.d:/etc/mysql/conf.d:ro"
+version: "3"
+
+services:
+  jenkins:
+    build: ./docker/jenkins/
+    volumes:
+      - jenkins_data:/home/myuser
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8080:8080"
+    environment:
+      - ADMIN_TOKEN
+
+  artifactory:
+    build: ./docker/artifactory/
+    ports:
+      - "8081:8081"
+      - "8082:8082"
+    volumes:
+      - artifactory_data:/jfrog
+
+volumes:
+  jenkins_data:
+  artifactory_data:
