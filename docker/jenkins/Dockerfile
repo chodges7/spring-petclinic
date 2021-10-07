@@ -32,8 +32,5 @@ USER $USER
 WORKDIR $HOME
 
 # 6) add an entrypoint instruction to run jenkins
-RUN wget https://get.jenkins.io/war-stable/2.303.1/jenkins.war
+RUN wget https://get.jenkins.io/war-stable/2.303.2/jenkins.war
 ENTRYPOINT ["java", "-jar", "jenkins.war"]
-
-# do `$ docker run -p 8080:8080 name:tag` when running the first time
-# then do `$ docker start $container_id` to reopen it.
