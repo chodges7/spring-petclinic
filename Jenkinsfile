@@ -8,13 +8,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh "./mvnw package"
+                sh "./mvnw package" // or sh "mvn compile"
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh "./mvnw test"
+                sh "./mvnw test" // or sh "mvn test"
             }
         }
         stage('Deploy') {
