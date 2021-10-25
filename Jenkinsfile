@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'curl -u jenkins:$ADMIN_TOKEN -X PUT "http://artifactory:8081/artifactory/maven-artifactory/petclinic/spring-petclinic-2.5.0-SNAPSHOT.jar" -T target/spring-petclinic-$VERSION.jar'
+                sh 'curl -u jenkins:$ADMIN_TOKEN -X PUT "http://artifactory:8081/artifactory/maven-artifactory/petclinic/spring-petclinic-$VERSION.jar" -T target/spring-petclinic-$VERSION.jar'
             }
         }
     }
