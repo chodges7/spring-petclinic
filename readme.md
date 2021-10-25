@@ -5,6 +5,7 @@
 - First you'll spin up the two docker containers using `docker compose up`
 - Then you'll set up the artifactory container
     - Make a maven repository named `maven-artifactory`
+    - Setup a "jenkins" user and **login as that user**
     - Generate an admin token and then save the token later to be used in the Jenkins container
 - Then you'll set up the jenkins container
     - Create a pipeline job that points to this repo for SCM (source control management)
