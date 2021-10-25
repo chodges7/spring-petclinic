@@ -5,16 +5,22 @@ pipeline {
         ADMIN_TOKEN = credentials('artifactory-admin-token')
     }
     stages {
-        stage('Build') {
+        stage('Compile') {
             steps {
-                echo 'Building...'
-                sh "./mvnw package" // or sh "mvn compile"
+                echo 'Compiling...'
+                sh "./mvnw compile" // or sh "mvn compile"
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
                 sh "./mvnw test" // or sh "mvn test"
+            }
+        }
+        stage('Package') {
+            steps {
+                echo 'Packaging...'
+                sh "./mvnw package" // or sh "mvn package"
             }
         }
         stage('Deploy') {
