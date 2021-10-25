@@ -1,4 +1,5 @@
 # Spring PetClinic Sample Application [![Build Status](https://travis-ci.org/spring-projects/spring-petclinic.png?branch=main)](https://travis-ci.org/spring-projects/spring-petclinic/)
+---
 
 ## Christian - Chapter 05 Declative Pipelines exercise
 - First you'll spin up the two docker containers using `docker compose up`
@@ -7,7 +8,10 @@
     - Generate an admin token and then save the token later to be used in the Jenkins container
 - Then you'll set up the jenkins container
     - Create a pipeline job that points to this repo for SCM (source control management)
-    - Add your saved token to Jenkins' credentials as a secret text
+    - Add your saved token to Jenkins' credentials as a secret text called `artifactory-admin-token`
+    - Note: make sure when making your pipeline that you change the branch from "\*/master" to "\*/main" 
+
+---
 
 ## Understanding the Spring Petclinic application with a few diagrams
 <a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
