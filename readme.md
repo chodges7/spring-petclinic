@@ -10,7 +10,9 @@
 - Then you'll set up the jenkins container
     - Create a pipeline job that points to this repo for SCM (source control management)
     - Add your saved token to Jenkins' credentials as a secret text called `artifactory-admin-token`
-    - Note: make sure when making your pipeline that you change the branch from "\*/master" to "\*/main" 
+    - Notes: 
+        - make sure when making your pipeline that you change the branch from "\*/master" to "\*/main" 
+        - The spring-petclinic Jenkinsfile also requires the "Pipeline Utility Steps" plugin
 
 ---
 
