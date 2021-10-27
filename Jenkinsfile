@@ -9,7 +9,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Compiling...'
-                sh "./mvnw compile" // or sh "mvn compile"
+                sh "./mvnw compile -Dcheckstyle.skip" // or sh "mvn compile"
             }
         }
         stage('Test') {
