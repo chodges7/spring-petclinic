@@ -14,11 +14,11 @@
         - make sure when making your pipeline that you change the branch from "\*/master" to "\*/main" 
         - The spring-petclinic Jenkinsfile also requires the "Pipeline Utility Steps" plugin
 - Setting up the Git Polling:
-	- Make sure `ngrok` is installed: `ngrok --version`
-	- Run the command: `ngrok http 8080`. This will setup a website on ngrok's side that points to **localhost:8080**
-	- Go into each of the Jenkins pipelines that you want to setup with the polling and check the **GitHub Polling** checkbox.
-	- Finally, you'll add the `http://xxxx.ngrok.io/github-webhook/` webhook in the repo's settings.
-		- Note: Make sure it's a **http** connection and not **https**. Also, don't forget the trailing **/**
+    - Make sure `ngrok` is installed: `ngrok --version`
+    - Run the command: `ngrok http 8080`. This will setup a website on ngrok's side that points to **localhost:8080**
+    - Go into each of the Jenkins pipelines that you want to setup with the polling and check the **GitHub Polling** checkbox.
+    - Finally, you'll add the `http://xxxx.ngrok.io/github-webhook/` webhook in the repo's settings.
+    - Note: Make sure it's a **http** connection and not **https**. Also, don't forget the trailing **/**
 
 ---
 
